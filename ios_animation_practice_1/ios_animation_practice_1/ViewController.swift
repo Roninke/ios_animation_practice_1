@@ -16,7 +16,6 @@ class ViewController: UIViewController {
   @IBOutlet weak var secondTitleLabel: UILabel!
   @IBOutlet weak var hiddenLabel: UILabel!
   
-  
   // MARK: - View Life Cycle
 
   override func didReceiveMemoryWarning() {
@@ -32,12 +31,18 @@ class ViewController: UIViewController {
     super.viewWillAppear(animated)
     
     // 預設titleLabel藏在畫面上方
-    // Label屬性：「center.y」，設置label的中心Y軸座標
     titleLabel.center.y -= view.bounds.height
     // 預設secondTitleLabel藏在畫面下方
     secondTitleLabel.center.y += view.bounds.height
     // 預設hiddenLabel透明隱藏
     hiddenLabel.alpha = 0.0
+    
+    // 基本UIView屬性
+    // center    = Changes position on screen
+    // frame     = Moves or resizes the view within its superview
+    // bounds    = Changes size and position on screen. Changes the view's bounding box
+    // alpha     = Adjusts the view's transparency (alpha) level, from 0.0 (transparent) to 1.0 (opaque)
+    // transform = Rotate, Scale, Translate, or Skew the view
   }
   
   override func viewDidAppear(_ animated: Bool) {
